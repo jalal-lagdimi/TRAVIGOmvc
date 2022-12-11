@@ -26,7 +26,8 @@ class ProductController{
             );
             $result = Product::add($data);
             if($result==='ok'){
-                header('location:'.BASE_URL);
+                Session::set('success','Product Added');
+                Redirect::to('home');
             } else {
                 echo $result;
             }
@@ -44,7 +45,8 @@ class ProductController{
             );
             $result = Product::update($data);
             if($result==='ok'){
-                header('location:'.BASE_URL);
+                Session::set('success','Product Update');
+                Redirect::to('home');
             } else {
                 echo $result;
             }
@@ -56,7 +58,8 @@ class ProductController{
             $data['id'] =$_POST['id'];
             $result = Product::delete($data);
             if($result==='ok'){
-                header('location:'.BASE_URL);
+                Session::set('success','Product Delete');
+                Redirect::to('home');
             } else {
                 echo $result;
             }

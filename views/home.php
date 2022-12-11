@@ -5,7 +5,10 @@ $products = $data->getAllProducts();
 ?>
 
 <div class="container mt-3">
+    <?php include "./views/includes/alerts.php" ?>
    <a href="<?php echo BASE_URL;?>add" class="btn btn-primary">ADD</a>
+   <a href="<?php echo BASE_URL;?>logout" class="btn btn-primary">LOG OUT</a>
+
     <table class="table">
         <thead>
             <th>IMAGE</th>
