@@ -23,10 +23,12 @@ class Product {
 
 
     static public function add($data){
-        $stmt = DB::connect()->prepare('INSERT INTO product (destination,description,price)VALUES (:destination,:description,:price)');
+        $stmt = DB::connect()->prepare('INSERT INTO product (destination,description,price,image)VALUES (:destination,:description,:price,:image)');
         $stmt->bindParam(':description',$data['description']);
         $stmt->bindParam(':destination',$data['destination']);
         $stmt->bindParam(':price',$data['price']);
+        $stmt->bindParam(':image',$data['image']);
+                
         if($stmt->execute()){
             return 'ok';
         } else {
@@ -38,11 +40,12 @@ class Product {
 
 
     static public function update($data){
-        $stmt = DB::connect()->prepare('UPDATE product SET destination = :destination,description = :description,price = :price WHERE id=:id');
+        $stmt = DB::connect()->prepare('UPDATE product SET destination = :destination,description = :description,price = :price,image = :image WHERE id=:id');
         $stmt->bindParam(':id',$data['id']);
         $stmt->bindParam(':description',$data['description']);
         $stmt->bindParam(':destination',$data['destination']);
         $stmt->bindParam(':price',$data['price']);
+        $stmt->bindParam(':image',$data['image']);
         if($stmt->execute()){
             return 'ok';
         } else {

@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
     <div class="card-header">ADD DESTINATION</div>
    <a href="<?php echo BASE_URL;?>" class="btn btn-primary">HOME</a>
    
-   <form method="POST">
+   <form method="POST" enctype="multipart/form-data">
     <div class="form-group">
     <label for="destination">DESTINATION</label>
     <input type="text" name="destination" class="form-control" placeholder="destination">   
@@ -18,7 +18,8 @@ if(isset($_POST['submit'])){
     <input type="text" name="description" class="form-control" placeholder="description">
     <label for="price">PARICE</label>
     <input type="number" name="price" class="form-control" placeholder="price">
-    <!-- <input type="file" name="file" class="form-control" > -->
+    <label for="price">CHOOSE IMAGE</label>
+    <input type="file" name="file" class="form-control" >
     <button type="submit" class="form-control btn btn-primary" name="submit">SUBMIT</button>
     
     </div>

@@ -20,10 +20,12 @@ $products = $data->getAllProducts();
         <tbody>
             <?php foreach($products as $product):?>
             <tr>
-                <td><?php echo $product['image'];?></td>
+                <td><img src="uploads/<?php  $product['image'];?>"></td>
                 <td><?php echo $product['destination'];?></td>
                 <td><?php echo $product['description'];?></td>
                 <td><?php echo $product['price'];?></td>
+                
+                
                 <td class="d-flex flex-row">
                     <form method="POST" class="me-1" action="update">
                         <input type="hidden" name="id" value="<?php echo $product['id'];?>">

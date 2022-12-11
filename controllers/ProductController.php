@@ -19,10 +19,18 @@ class ProductController{
 
     public function addProduct(){
         if(isset($_POST['submit'])){
+            $file_name=$_FILES['file']['name'];
+            $file_tmp=$_FILES['file']['tmp_name'];
+            $file_size=$_FILES['file']['size'];
+            $file_type=$_FILES['file']['type'];
+            $location= "uploads/".$file_name;
+            move_uploaded_file($file_tmp,$location);
+
             $data =  array(
                 'destination' => $_POST['destination'],
                 'description' => $_POST['description'],
-                'price' => $_POST['price'],
+                'price' => $_POST['price'],     
+                'image' => $file_name=$_FILES['file']['name'], 
             );
             $result = Product::add($data);
             if($result==='ok'){
@@ -37,11 +45,18 @@ class ProductController{
 
     public function updateProduct(){
         if(isset($_POST['submit'])){
+            $file_name=$_FILES['file']['name'];
+            $file_tmp=$_FILES['file']['tmp_name'];
+            $file_size=$_FILES['file']['size'];
+            $file_type=$_FILES['file']['type'];
+            $location= "uploads/".$file_name;
+            move_uploaded_file($file_tmp,$location);
             $data =  array(
                 'id' => $_POST['id'],
                 'destination' => $_POST['destination'],
                 'description' => $_POST['description'],
                 'price' => $_POST['price'],
+                'image' => $file_name=$_FILES['file']['name'], 
             );
             $result = Product::update($data);
             if($result==='ok'){
