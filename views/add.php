@@ -7,6 +7,7 @@ if(isset($_POST['submit'])){
 ?>
 
 <div class="container mt-3">
+    <div class="card-header">ADD DESTINATION</div>
    <a href="<?php echo BASE_URL;?>" class="btn btn-primary">HOME</a>
    
    <form method="POST">
@@ -17,12 +18,9 @@ if(isset($_POST['submit'])){
     <input type="text" name="description" class="form-control" placeholder="description">
     <label for="price">PARICE</label>
     <input type="number" name="price" class="form-control" placeholder="price">
-    
-    <div>
+    <!-- <input type="file" name="file" class="form-control" > -->
     <button type="submit" class="form-control btn btn-primary" name="submit">SUBMIT</button>
-    </div>
     
-
     </div>
 
    </form>
