@@ -30,7 +30,7 @@ class ProductController{
                 'destination' => $_POST['destination'],
                 'description' => $_POST['description'],
                 'price' => $_POST['price'],     
-                'image' => $_FILES['file']['name'], 
+                'image' => $file_name=$_FILES['file']['name'], 
             );
             if(empty($_FILES['file']['name']) || empty($_POST['price'])  || empty($_POST['destination']) || empty($_POST['destination'])){
                 echo 'fill out all';
