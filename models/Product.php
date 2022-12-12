@@ -4,7 +4,6 @@ class Product {
         $stmt = DB::connect()->prepare('SELECT * FROM product');
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        // $stmt->close();
         $stmt = null;
     }
 
@@ -34,7 +33,6 @@ class Product {
         } else {
             return 'error';
         }
-        // $stmt->close();
         $stmt=null;
     }
 
@@ -51,7 +49,6 @@ class Product {
         } else {
             return 'error';
         }
-        // $stmt->close();
         $stmt=null;
     }
 

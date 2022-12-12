@@ -2,6 +2,8 @@
 if(isset($_POST['id'])){
     $exitProduct = new ProductController();
     $product = $exitProduct->getOneProduct();
+}else{
+    Redirect::to('dashbord');
 }
 
 if(isset($_POST['submit'])){
