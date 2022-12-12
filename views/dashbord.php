@@ -5,9 +5,9 @@ $products = $data->getAllProducts();
 ?>
 
 <div class="container mt-3">
-    <?php include "./views/includes/alerts.php" ?>
+   <?php include "./views/includes/alerts.php" ?>
    <a href="<?php echo BASE_URL;?>add" class="btn btn-primary">ADD</a>
-   <a href="<?php echo BASE_URL;?>home" class="btn btn-primary">LOG OUT</a>
+   <a href="<?php echo BASE_URL;?>logout" class="btn btn-danger">LOG OUT</a>
 
     <table class="table">
         <thead>
@@ -20,7 +20,7 @@ $products = $data->getAllProducts();
         <tbody>
             <?php foreach($products as $product):?>
             <tr>
-                <td><img src="uploads/<?php  $product['image'];?>"></td>
+                <td><img src="uploads/<?php echo $product['image'];?>"></td>
                 <td><?php echo $product['destination'];?></td>
                 <td><?php echo $product['description'];?></td>
                 <td><?php echo $product['price'];?></td>
@@ -43,3 +43,6 @@ $products = $data->getAllProducts();
         </tbody>
     </table>
 </div>
+
+
+

@@ -30,17 +30,21 @@ class ProductController{
                 'destination' => $_POST['destination'],
                 'description' => $_POST['description'],
                 'price' => $_POST['price'],     
-                'image' => $file_name=$_FILES['file']['name'], 
+                'image' => $_FILES['file']['name'], 
             );
-            $result = Product::add($data);
-            if($result==='ok'){
+            if(empty($_FILES['file']['name']) || empty($_POST['price'])  || empty($_POST['destination']) || empty($_POST['destination'])){
+                echo 'fill out all';
+            } else{
+                $result = Product::add($data);
+             if($result==='ok'){
                 Session::set('success','Product Added');
                 Redirect::to('dashbord');
             } else {
                 echo $result;
             }
+          }   
         }
-    }
+      }
 
 
     public function updateProduct(){
@@ -56,7 +60,7 @@ class ProductController{
                 'destination' => $_POST['destination'],
                 'description' => $_POST['description'],
                 'price' => $_POST['price'],
-                'image' => $file_name=$_FILES['file']['name'], 
+                'image' => $_FILES['file']['name'], 
             );
             $result = Product::update($data);
             if($result==='ok'){

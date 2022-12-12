@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
     <div class="card-header">ADD DESTINATION</div>
    <a href="<?php echo BASE_URL;?>dashbord" class="btn btn-primary">HOME</a>
    
-   <form method="POST">
+   <form method="POST" enctype="multipart/form-data">
     <div class="form-group">
     <label for="destination">DESTINATION</label>
     <input value="<?php echo $product['description']; ?>" type="text" name="destination" class="form-control" placeholder="destination">  
