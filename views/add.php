@@ -22,9 +22,8 @@ if(isset($_POST['submit'])){
              
 
                 <form method="POST" enctype="multipart/form-data">
-     
+                <?php include "./views/includes/alerts.php" ?>
                   <div class="d-flex align-items-center mb-3 pb-1">
-                  <?php include "./views/includes/alerts.php" ?>
                     <span class="h1 fw-bold mb-0;" style="color:#06576c">ADD DESTINATION</span>
                   </div>
 

@@ -1,7 +1,7 @@
 <?php
 
     if(isset($_COOKIE['success'])){
-        echo '<div class="alert alert-succcess">'.$_COOKIE['success'].'</div>';
+        echo '<div class="alert alert-success">'.$_COOKIE['success'].'</div>';
     }
 
     if(isset($_COOKIE['error'])){

@@ -40,7 +40,7 @@ $products = $data->getAllProducts();
       <th><img src="uploads/<?php echo $product['image'];?>" style="width: 50px; hieght:50px"></th>
       <td style="padding: 25px;"><?php echo $product['destination'];?></td>
       <td style="padding: 25px;"><?php echo $product['description'];?></td>
-      <td style="padding: 30px;"><?php echo $product['price'];?></td>
+      <td style="padding: 30px;">from <?php echo $product['price'];?> $</td>
       <td class="d-flex flex-row ">
         <form method="POST" action="update" style="padding-top: 25px;">
         <input type="hidden" name="id" value="<?php echo $product['id'];?>">

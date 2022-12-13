@@ -33,7 +33,8 @@ class ProductController{
                 'image' => $file_name=$_FILES['file']['name'], 
             );
             if(empty($_FILES['file']['name']) || empty($_POST['price'])  || empty($_POST['destination']) || empty($_POST['destination'])){
-                echo 'fill out all';
+                Session::set('error','fill out all');
+                Redirect::to('add');
             } else{
                 $result = Product::add($data);
              if($result==='ok'){

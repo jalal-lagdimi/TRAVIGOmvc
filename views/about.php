@@ -17,7 +17,7 @@
 <body>
 	<!--header--->
 	<header>
-		<a href="#" class="logo">T-TRAVEL</a>
+		<a href="home" class="logo">T-TRAVEL</a>
 		<div class="bx bx-menu" id="menu-icon"></div>
 
 		<ul class="navbar">
@@ -31,7 +31,7 @@
 	<!--Home section--->
 	<section class="home" id="home">
 		<div class="home-text">
-			<h1>Travigo <br> Travel</h1>
+			<h1>ABOUT US</h1>
 			<p>Explore our trips and live The Good Life with Travigo <br> Tours that make you fall in love with the world.</p>
 			<a href="#" class="home-btn">Let's go now</a>
 		</div>

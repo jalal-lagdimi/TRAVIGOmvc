@@ -1,3 +1,9 @@
+<?php
+$data = new ProductController();
+$products = $data->getAllProducts();
+
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +21,7 @@
 </head>
 <body>
     <header>
-		<a href="#" class="logo">T-TRAVEL</a>
+		<a href="home" class="logo">T-TRAVEL</a>
 		<div class="bx bx-menu" id="menu-icon"></div>
 
 		<ul class="navbar">
@@ -29,7 +35,7 @@
 	<!--Home section--->
 	<section class="home" id="home">
 		<div class="home-text">
-			<h1>Travigo <br> Travel</h1>
+			<h1>OUR TOURS</h1>
 			<p>Explore our trips and live The Good Life with Travigo <br> Tours that make you fall in love with the world.</p>
 			<a href="#" class="home-btn">Let's go now</a>
 		</div>
@@ -46,16 +52,17 @@
 	</div>
 
 	<div class="package-content">
+	<?php foreach($products as $product):?>
 		<div class="box">
 			<div class="thum">
-				<img src="views/img/maldives.jpg">
+			<img src="uploads/<?php echo $product['image'];?>">
 				
 			</div>
 
 			<div class="dest-content">
 				<div class="location">
-					<h4>Maldives, destinatio</h4>
-					<p >A romantic destination par excellence, and are <br> also an explosive place for families with <br> children of all ages. </p>
+					<h4><?php echo $product['destination'];?></h4>
+					<p ><?php echo $product['description'];?>
 				</div>
 				
 				<div class="stars">
@@ -68,123 +75,10 @@
 				
 			</div>
 			<div>
-				<p>from 1800$ </p>
+				<p>from <?php echo $product['price'];?> $</p>
 			</div>
 		</div>
-
-		<div class="box">
-			<div class="thum">
-				<img src="views/img/istunbul.jpg">
-				
-			</div>
-
-			<div class="dest-content">
-				<div class="location">
-					<h4>Istanbul, destination</h4>
-					<p>A romantic destination par excellence, and are <br> also an explosive place for families with <br> children of all ages.</p>
-				</div>
-				<div class="stars">
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-				</div>
-			</div>
-			<p>from 1000$</p>
-		</div>
-
-		<div class="box">
-			<div class="thum">
-				<img src="views/img/dakhla.jpg">
-				
-			</div>
-
-			<div class="dest-content">
-				<div class="location">
-					<h4>Dakhla, destination</h4>
-					<p>A romantic destination par excellence, and are <br> also an explosive place for families with <br> children of all ages.</p>
-				</div>
-				<div class="stars">
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-				</div>
-			</div>
-			<p>from 800$</p>
-		</div>
-		<div class="box">
-			<div class="thum">
-				<img src="views/img/paris.jpg">
-				
-			</div>
-
-			<div class="dest-content">
-				<div class="location">
-					<h4>Paris, destination</h4>
-					<p>A romantic destination par excellence, and are <br> also an explosive place for families with <br> children of all ages. </p>
-				</div>
-				
-				<div class="stars">
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-				</div>
-				
-			</div>
-			<div>
-				<p>from 3200$</p>
-			</div>
-		</div>
-
-		<div class="box">
-			<div class="thum">
-				<img src="views/img/newyork.jpg">
-				
-			</div>
-
-			<div class="dest-content">
-				<div class="location">
-					<h4>New York, destination</h4>
-					<p>A romantic destination par excellence, and are <br> also an explosive place for families with <br> children of all ages.</p>
-				</div>
-				<div class="stars">
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-				</div>
-			</div>
-			<p>from 4000$</p>
-		</div>
-
-		<div class="box">
-			<div class="thum">
-				<img src="views/img/roma.jpg">
-				
-			</div>
-
-			<div class="dest-content">
-				<div class="location">
-					<h4>Roma, destination</h4>
-					<p>A romantic destination par excellence, and are <br> also an explosive place for families with <br> children of all ages.</p>
-				</div>
-				<div class="stars">
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-					<a href="#"><i class='bx bxs-star'></i></a>
-				</div>
-			</div>
-			<p>from 3900$</p>
-		</div>
-	
+		<?php endforeach; ?>
 	</div>
 	<div class="tittle"></div>
 </section>
