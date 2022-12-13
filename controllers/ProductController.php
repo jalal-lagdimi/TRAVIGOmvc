@@ -30,7 +30,7 @@ class ProductController{
                 'destination' => $_POST['destination'],
                 'description' => $_POST['description'],
                 'price' => $_POST['price'],     
-                'image' => $file_name=$_FILES['file']['name'], 
+                'image' => $_FILES['file']['name'], 
             );
             if(empty($_FILES['file']['name']) || empty($_POST['price'])  || empty($_POST['destination']) || empty($_POST['destination'])){
                 Session::set('error','fill out all');
@@ -55,7 +55,7 @@ class ProductController{
             $file_size=$_FILES['file']['size'];
             $file_type=$_FILES['file']['type'];
             $location= "uploads/".$file_name;
-            move_uploaded_file($file_tmp,$location);
+            
             $data =  array(
                 'id' => $_POST['id'],
                 'destination' => $_POST['destination'],
@@ -63,13 +63,25 @@ class ProductController{
                 'price' => $_POST['price'],
                 'image' => $_FILES['file']['name'], 
             );
-            $result = Product::update($data);
-            if($result==='ok'){
-                Session::set('success','Product Update');
-                Redirect::to('dashbord');
-            } else {
-                echo $result;
+            if(empty($file_name)){
+                $result = Product::update1($data);
+                if($result==='ok'){
+                    Session::set('success','Product Update');
+                    Redirect::to('dashbord');
+                } else {
+                    echo $result;
+                }
+            }else{
+                $result = Product::update($data);
+                if($result==='ok'){
+                    Session::set('success','Product Update');
+                    Redirect::to('dashbord');
+                } else {
+                    echo $result;
+                }   
+                move_uploaded_file($file_tmp,$location);
             }
+           
         }
     }
 

@@ -51,6 +51,20 @@ class Product {
         }
         $stmt=null;
     }
+    static public function update1($data){
+        $stmt = DB::connect()->prepare('UPDATE product SET destination = :destination,description = :description,price = :price WHERE id=:id');
+        $stmt->bindParam(':id',$data['id']);
+        $stmt->bindParam(':description',$data['description']);
+        $stmt->bindParam(':destination',$data['destination']);
+        $stmt->bindParam(':price',$data['price']);
+        
+        if($stmt->execute()){
+            return 'ok';
+        } else {
+            return 'error';
+        }
+        $stmt=null;
+    }
 
     public static function delete($data){
         $id = $data['id'];
