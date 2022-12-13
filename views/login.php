@@ -43,7 +43,8 @@ if(isset($_POST['submit'])){
                   </div>
 
                   <div class="pt-1 mb-4">
-                    <button name="submit" class="btn btn-dark lg btn-block" style="background-color: #00c8ff" border: none;style="background-color: #00c8ff" type="submit">Login</button>
+                    <button name="submit" class="btn btn-dark  btn-block" style="background-color: #00c8ff" border: none;style="background-color: #00c8ff" type="submit">Login</button>
+                    <a href="<?php echo BASE_URL;?>home" class="btn btn-dark btn-block" style="background-color: #00c8ff">Cancel</a>
                   </div>
 
                 </form>
