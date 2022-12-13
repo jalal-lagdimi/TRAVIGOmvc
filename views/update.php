@@ -1,4 +1,5 @@
 <?php
+require_once './views/includes/header.php';
 if(isset($_POST['id'])){
     $exitProduct = new ProductController();
     $product = $exitProduct->getOneProduct();

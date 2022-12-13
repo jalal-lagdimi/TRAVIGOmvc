@@ -1,4 +1,5 @@
 <?php
+require_once './views/includes/header.php';
 if(isset($_POST['submit'])){
     $newProduct = new ProductController();
     $newProduct->addProduct();
